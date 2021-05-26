@@ -1,0 +1,13 @@
+# class files
+*.class
+.project
+.classpath
+.settings
+*.html
+*.lst
+*.png
+*.gif
+*.css
+*.js
+*.xml
+!pom.xml
