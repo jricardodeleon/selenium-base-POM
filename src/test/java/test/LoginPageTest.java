@@ -1,7 +1,5 @@
 package test;
 
-import java.util.concurrent.TimeUnit;
-
 import org.testng.Assert;
 import org.testng.annotations.AfterTest;
 import org.testng.annotations.BeforeMethod;
@@ -16,10 +14,6 @@ public class LoginPageTest extends BaseTest {
 	
 	LoginPage loginPage;
 	
-	
-	private static final String WEBURL = "https://www.saucedemo.com/";
-	private static final int LONGTIME = 10;
-	
 	@Override
 	@BeforeMethod
 	public void setupPages() {
@@ -29,11 +23,7 @@ public class LoginPageTest extends BaseTest {
 	@Override
 	@BeforeTest
 	public void startDriver() {
-		browserType(DriverType.CHROME);
-		driver.get(WEBURL);
-		driver.manage().window().maximize();
-		driver.manage().timeouts().implicitlyWait(LONGTIME, TimeUnit.SECONDS);
-		
+		getHome(DriverType.CHROME);
 	}
 	
 	@Test
