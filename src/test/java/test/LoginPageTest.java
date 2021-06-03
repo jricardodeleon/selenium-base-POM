@@ -27,10 +27,11 @@ public class LoginPageTest extends BaseTest {
 	}
 	
 	@Test
-	public void getErrorWhenInfoIsEmpty() {
+	public void CheckErrorUserNameIsRequired() {
 		Assert.assertTrue(loginPage.isLoginVisible());
 		loginPage.clickOnLoginBtn();
-		Assert.assertTrue(loginPage.errorBtnIsVisible());
+		Assert.assertTrue(loginPage.errorMsgIsVisible());
+		Assert.assertEquals(loginPage.getTextErrorMsg(), "Epic sadface: Username is required");
 	}
 
 	@AfterTest

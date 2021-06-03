@@ -14,6 +14,9 @@ public class LoginPage extends BasePage {
 	
 	@FindBy(xpath = "//button[@class = 'error-button']")
 	private WebElement errorBtn;
+
+	@FindBy(xpath = "//h3[@data-test = 'error']")
+	private WebElement errorMsg;
 	
 	public LoginPage(WebDriver driver) {
 		super(driver);
@@ -28,8 +31,12 @@ public class LoginPage extends BasePage {
 		clickOnElement(loginBtn);
 	}
 	
-	public boolean errorBtnIsVisible() {
-		waitForElementToAppear(errorBtn);
-		return errorBtn.isDisplayed();
+	public boolean errorMsgIsVisible() {
+		waitForElementToAppear(errorMsg);
+		return errorMsg.isDisplayed();
+	}
+
+	public String getTextErrorMsg(){
+		return getTextOf(errorMsg);
 	}
 }

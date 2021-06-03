@@ -11,3 +11,6 @@
 *.js
 *.xml
 !pom.xml
+!testng.xml
+/target/
+.vscode
