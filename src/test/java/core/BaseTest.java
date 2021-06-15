@@ -7,18 +7,18 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.ie.InternetExplorerDriver;
-
+import dataProvider.ProjectData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 
 public abstract class BaseTest {
 	
 	protected WebDriver driver;
 
-	private static final String WEBURL = "https://www.saucedemo.com/";
+	//private static final String WEBURL = "https://www.saucedemo.com/";
 	private static final int LONGTIME = 10;
 
 	public BaseTest() {
-
+		//dataFileReader = new DataFileReader();
 	}
 	
 	public WebDriver browserType(DriverType type) {
@@ -41,7 +41,7 @@ public abstract class BaseTest {
 
 	public void getHome(DriverType type){
 		browserType(type);
-		driver.get(WEBURL);
+		driver.get(ProjectData.webURL);
 		driver.manage().window().maximize();
 		driver.manage().timeouts().implicitlyWait(LONGTIME, TimeUnit.SECONDS);
 	}
